@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Principios</title>
+</head>
+<body>
+	<!--
+	<script type="text/javascript">
+		//EJERCICIO 1
+		document.write('Hola mundo');
+	</script>
+
+	<script type="text/javascript">
+		//EJERCICIO 2
+		for(let I = 0; I < 3; I++){
+			valor = prompt('Introduce un valor')
+			if(valor > 10)
+				alert('Es mayor que 10');
+		}
+	</script>
+
+	<script type="text/javascript">
+		//EJERCICIO 2 EXTRA
+		do{
+			var cont = 0; var numMayor; var numMenor;
+			valor = parseInt(prompt('Introduce un valor. 1111 para salir'));
+			if(valor != 1111){
+				if(cont==0){ //es el primer número
+					numMayor=valor;numMenor=valor;
+				}
+				else{
+					if (valor > numMayor)
+						numMayor = valor;
+					if (valor < numMenor)
+						numMenor = valor;
+				}
+				cont++;
+				alert(cont);
+			}
+		}while(valor != 1111);
+		document.write('Has introducido ' + cont + ' números');
+		if(cont!=0){
+			document.write('El mayor número introducido es ' + numMayor);
+			document.write('El menor número introducido es ' + numMenor);
+		}
+	</script>
+
+	<script type="text/javascript">
+		//EJERCICIO 3
+		do{
+			mes = parseInt(prompt("Introduzca el mes"));
+		}while(mes < 1 || mes > 12);
+		do{
+			dia = parseInt(prompt("Introduzca el día"));
+		}while(dia < 1 || dia > 31);
+
+		if (mes == 12 && dia == 25)
+			document.write("ES NAVIDAD");
+		else 
+			document.write("No es navidad :(");
+	</script> 
+
+	<script type="text/javascript">
+		//EJERCICIO 4
+		alert(`Datos del operario:`);
+		sueldo = parseInt(prompt('Sueldo'));
+		años = parseInt(prompt('Años de antigüedad'))
+
+		if(sueldo < 500){
+			if(años >= 10)
+				sueldo = sueldo * 3;
+			else if(años < 10)
+				sueldo = sueldo * 2;
+		}
+		
+		document.write('El sueldo final es de ' + sueldo + '€');
+	</script>
+	
+	<script type="text/javascript">
+		//EJERCICIO 5
+		var notaA = 0;
+		notaN = parseFloat(prompt('Nota'));
+		switch(true){
+			case (notaN >= 0 && notaN < 3):
+				notaA = 'Muy deficiente';
+				break;
+			case (notaN >= 3 && notaN < 5):
+				notaA = 'Insuficiente';
+				break;
+			case (notaN >= 5 && notaN < 6):
+				notaA = 'Bien';
+				break;
+			case (notaN >= 6 && notaN < 9):
+				notaA = 'Notable';
+				break;
+			case (notaN >= 9 && notaN <= 10):
+				notaA = 'Sobresaliente';
+				break;
+			default:
+				notaA = 'NOTA INCORRECTA';
+		}
+		document.write('La calificación alfabética es de ' + notaA);
+	</script>
+ 
+	<script type="text/javascript">
+		//EJERCICIO 6
+		var sBruto, sNeto;
+		do{
+			horas = parseFloat(prompt('Horas trabajadas por semana'));
+			pagaxh = parseFloat(prompt('Cantidad cobrada por hora'));
+		}while(horas < 0 && pagaxh < 0);
+
+		if(horas <= 35)
+			sBruto = horas * pagaxh;
+		else{
+			sBruto = 35 * pagaxh;
+			horas -= 35;
+			sBruto += horas * (pagaxh * 1.5);
+		}
+
+		if(sBruto <= 500)
+			sNeto = sBruto;
+		else if(sBruto > 500 && sBruto <= 900){
+			sBruto -= 500;
+			sNeto = 500 + (sBruto * 0.75);
+		}
+		else{
+			sBruto -= 900;
+			rangDos = 400 * 0.75;
+			rangTres = sBruto * 0.55;
+			sNeto = 500 + rangDos + rangTres;
+		}
+
+		document.write('El salario semanal es de ' + sNeto + '€');
+	</script>
+	
+	<script type="text/javascript">
+		//EJERCICIO 7
+		var muestra = 2;
+		do{
+			numero = parseFloat(prompt('Introduzca un número igual o mayor a 2'));
+		}while(numero < 2);
+
+		do{
+			document.write(muestra + '<br>');
+			muestra += 2;
+		}while(muestra <= numero);
+	</script>
+
+	<script type="text/javascript">
+		//EJERCICIO 8
+		do{
+			numero = parseFloat(prompt('Introduzca un número igual o mayor a 1'));
+		}while(numero < 1);
+
+		if(numero % 2 == 0)
+			numero -= 1;
+
+		do{
+			document.write(numero + '<br>');
+			numero -= 2;
+		}while(numero >= 1);
+	</script>
+
+	<script type="text/javascript">
+		//EJERCICIO 9
+		do{
+			x = parseFloat(prompt('Múltiplo'));
+			y = parseFloat(prompt('Final de la tabla'));
+		}while((-50 >= x && x >=50) || (1 >= y && y >= 20));
+		var total = x;
+
+		do{
+			document.write(total + ' ');
+			total += x;
+		}while(total <= y);
+	</script>
+
+	<script type="text/javascript">
+		//EJERCICIO 10
+		var comprobador = false;
+		do{
+			nota = parseInt(prompt('Introduce la nota. -1 para salir'));
+			if(nota < -1 || nota > 10){
+				do{
+					nota = parseInt(prompt('Introduce una nota entre 0 y 10'));
+				}while(nota < -1 || nota > 10)
+			}
+
+			if(nota == 10)
+				comprobador = true;
+			
+		}while(nota != -1);
+
+		if(comprobador == true)
+			document.write('Si');
+		else
+			document.write('No');
+	</script>
+
+	<script type="text/javascript">
+		//EJERCICIO 11
+		var quin = 0; var dosc = 0; var cien = 0; var cinc = 0; var vein = 0; var diez = 0; var cico = 0;
+		dinero = parseInt(prompt('Introduce la cantidad de dinero a cambiar'));
+		if(dinero%5 != 0 || dinero < 0){
+			do{
+				dinero = parseInt(prompt('La cantidad debe ser multiplo de 5'));
+			}while(dinero%5 != 0 || dinero < 0);
+		}
+
+		do{
+			if(dinero >= 500){
+				quin++;
+				dinero -= 500;
+			}
+			else if(dinero >= 200){
+				dosc++;
+				dinero -= 200;
+			}
+			else if(dinero >= 100){
+				cien++;
+				dinero -= 100;
+			}
+			else if(dinero >= 50){
+				cinc++;
+				dinero -= 50;
+			}
+			else if(dinero >= 20){
+				vein++;
+				dinero -= 20;
+			}
+			else if(dinero >= 10){
+				diez++;
+				dinero -= 10;
+			}
+			else if(dinero >= 5){
+				cico++;
+				dinero -= 5;
+			}
+		}while(dinero != 0)
+
+		document.write('Billetes:' + '<br>');
+		document.write('5€: ' + cico + '<br>');
+		document.write('10€: ' + diez + '<br>');
+		document.write('20€: ' + vein + '<br>');
+		document.write('50€: ' + cinc + '<br>');
+		document.write('100€: ' + cien + '<br>');
+		document.write('200€: ' + dosc + '<br>');
+		document.write('500€: ' + quin + '<br>');
+	</script>
+	
+	<script type="text/javascript">
+		//EJERCICIO 12
+		function suma(a, b) {
+			return a+b;
+		}
+		document.write(suma(5,3))
+	</script>	
+
+	<script type="text/javascript">
+		//EJERCICIO 13
+		function esBisiesto(anyo){
+			let bisiesto = false;
+
+			if (anyo%4 == 0 && anyo%100 !=0 || anyo%400 == 0)
+				bisiesto = true;
+
+			return bisiesto;
+		}
+		document.write(esBisiesto(700));
+	</script>
+
+	<script type="text/javascript">
+		//EJERCICIO 14
+		function perimetroRectangulo(a,b){
+			var area = a*b/2;
+			var float = area.toFixed(2);
+			return float;
+		}
+		document.write(perimetroRectangulo(5,9));
+	</script>	-->
+</body>
+</html>

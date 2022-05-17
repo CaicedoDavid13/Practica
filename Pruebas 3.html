@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		let valor, cont=0;
+		do {
+			valor = prompt('Introduce un valor');
+			if(isNaN(valor)){
+				cont++;
+			}
+		}while(valor = 0)
+		alert('Has introducido' + cont + 'valores no numéricos')
+	</script>
+</body>
+</html>
